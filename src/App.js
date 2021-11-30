@@ -6,7 +6,6 @@ const App = (props) => {
   const [courses, setCourses] = useState([]);
   const [chosenCourse, setChosenCourse] = useState('');
   const [currentCourse, setCurrentCourse] = useState(0);
-  const [className, setClassName] = useState('btn');
   const _apiKey = 'https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json';
 
   useEffect(() => {
@@ -37,7 +36,6 @@ const App = (props) => {
       .then(res => {
         setCourses(res);
         setChosenCourse(e.target.name);
-        e.target.className = 'btn btn_active';
       })
       .catch(err => console.log(err))
   }
